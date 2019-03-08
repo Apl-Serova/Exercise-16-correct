@@ -1,0 +1,26 @@
+import java.io.*;
+import java.util.Scanner;
+public class Exercise15 {
+
+    public static void main(String[] args) {
+        try {
+            System.out.println("Введите путь к файлу: ");
+            Scanner s = new Scanner(System.in);
+            String path = s.nextLine();
+            File f = new File(path);
+            FileReader fr = new FileReader(f);
+            BufferedReader reader = new BufferedReader(fr);
+            String line = reader.readLine();
+            while (line != null) {
+                System.out.println(line);
+                line = reader.readLine();
+            }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+}
